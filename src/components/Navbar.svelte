@@ -58,17 +58,21 @@
         margin-left: 6vw; 
     }
 
-    nav {
-        display: none;
-    }
+    @media only screen and (max-width: 767px) {
 
-    nav.open {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: var(--dark);
-        width: 100%;
+        nav {
+            display: none;
+        }
+    
+        nav.open {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--dark);
+            width: 100%;
+        }
+        
     }
 
     ul {
@@ -138,4 +142,32 @@
     .bar--3 {
         transform: translateY(5px); 
     }
+
+    @media only screen and (min-width: 768px) {
+
+        .logo {
+            margin-left: 3vw;
+        }
+
+        .burger {
+            display: none;
+        }
+
+        nav {
+            display: block;
+            position: relative;
+        }
+
+        ul {
+            margin: 0;
+            flex-direction: row;
+            gap: 2vw;
+        }
+        
+        .sign-in-btn {
+            margin-inline: 2vw;
+        }
+
+    }
+
 </style>

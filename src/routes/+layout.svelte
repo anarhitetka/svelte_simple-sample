@@ -27,5 +27,14 @@
 
     :global(body) {
         background-color: #555555;
+        max-width: 100%;
+        overflow-x: hidden;
+        height: 100%;
+    }
+
+    :global(html) {
+        max-width: 100%;
+        overflow-x: hidden;
+        height: 100%;
     }
 </style>

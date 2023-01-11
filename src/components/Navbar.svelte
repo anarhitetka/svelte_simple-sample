@@ -33,11 +33,11 @@
                 <a on:click={() => (closeMenu(3))} class:current={current === 3} href="/">About</a>
             </li>
             <li class="sign-in-btn">
-                <a on:click={() => (closeMenu(-1))} href="/">Sign In</a>
+                <a on:click={() => (closeMenu(-1))} href="/" class="sign-in-btn-anchor">Sign In</a>
             </li>
         </ul>
     </nav>
-    <button class="burger" on:click={toggleMenu}>
+    <button class="burger" on:click={toggleMenu} class:open={isMenuOpen}>
         <div class="bar--1"/>
         <div class="bar--2"/>
         <div class="bar--3"/>
@@ -61,18 +61,23 @@
     @media only screen and (max-width: 767px) {
 
         nav {
-            display: none;
+            opacity: 0;
+            display: block;
+            position: absolute;
+
+            top: 100%;
+            left: 100%;
+            background-color: var(--dark);
+            width: 100%;
+            transition: all 300ms ease-in-out;
         }
     
         nav.open {
-            display: block;
-            position: absolute;
-            top: 100%;
+            opacity: 1;
             left: 0;
-            background-color: var(--dark);
-            width: 100%;
+
         }
-        
+
     }
 
     ul {
@@ -86,6 +91,21 @@
         list-style: none;
         font-size: 1.1rem;
     }
+
+    /* navigation item animation  */
+    li > a {
+        display: inline-block;
+        transition: all 200ms ease-in-out;
+    }
+
+    li > a:hover:not(.current):not(.sign-in-btn-anchor) {
+        border-bottom: 1px solid var(--secondary);
+    }
+
+    li > a:active {
+        transform: scale(0.9);
+    }
+    /* navigation item animation  */
 
     .current {
         position: relative;
@@ -125,6 +145,7 @@
         width: 14px;
         background-color: var(--light);
         position: absolute;
+        transition: all 300ms ease-in-out;
     }
     
     .burger:hover {
@@ -142,6 +163,18 @@
     .bar--3 {
         transform: translateY(5px); 
     }
+
+    /* burger menu animations  */
+    .burger.open .bar--1 {
+        transform: rotateZ(45deg);
+    }
+    .burger.open .bar--2 {
+        opacity: 0;
+    }
+    .burger.open .bar--3 {
+        transform: rotateZ(-45deg);
+    }
+    /* burger menu animations  */
 
     @media only screen and (min-width: 768px) {
 

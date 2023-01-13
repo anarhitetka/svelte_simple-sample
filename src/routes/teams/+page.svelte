@@ -7,4 +7,5 @@
 {#each teams as team}
 	<h3>{team.abbreviation}</h3>
 	<p>{team.displayName}</p>
+	<a href={`/teams/${team.id}`}>link to team</a>
 {/each}

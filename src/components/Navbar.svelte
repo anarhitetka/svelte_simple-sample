@@ -1,4 +1,6 @@
 <script>
+	import NflLogoSvg from '../assets/NFLLogoSVG.svelte';
+
 	let isMenuOpen = false;
 
 	function toggleMenu() {
@@ -14,7 +16,7 @@
 
 <div class="navbar">
 	<a href="/" class="logo">
-		<h1>LOGO</h1>
+		<NflLogoSvg />
 	</a>
 	<nav class:open={isMenuOpen}>
 		<ul>

@@ -21,7 +21,7 @@
     :global(:root) {
         --primary: #e03616;
         --secondary: #f3a712;
-        --dark: #222222;
+        --dark: #141414;
         --light: #ebebeb;
     }
 
@@ -30,6 +30,10 @@
         max-width: 100%;
         overflow-x: hidden;
         height: 100%;
+        background-image: url("../assets/player.jpg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: center; 
+        background-size: cover;
     }
 
     :global(html) {

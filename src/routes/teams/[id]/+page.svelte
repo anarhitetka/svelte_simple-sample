@@ -46,6 +46,8 @@
 <style>
 	.team-page {
 		background-color: rgba(0,0,0,0.3);
+	    height: calc(100vh - 80px);
+		overflow-y: scroll;
 	}
 	.team-header {
 		display: flex;

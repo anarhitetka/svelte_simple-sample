@@ -22,7 +22,9 @@
         --primary: #e03616;
         --secondary: #f3a712;
         --dark: #141414;
+        --medium: #a7a7a7;
         --light: #ebebeb;
+        --background: rgba(0,0,0,0.3);
     }
 
     :global(body) {

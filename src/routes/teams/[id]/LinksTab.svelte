@@ -3,21 +3,28 @@
 </script>
 
 <div class="links-container">
-    {#each items as link}
+    <div class="links">
+        {#each items as link}
         <a target="blank" href={link.href}>{link.text}</a>
-    {/each}
+        {/each}
+    </div>
 </div>
 
 <style>
     .links-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .links {
+        width: 100%;
         margin: 0;
-        background-color: rgba(0,0,0,0.7);
         display: flex;
         flex-direction: column;        
-        align-items: center;
+        align-items: flex-start;
+        justify-content: center;
     }
     a {
-        text-align: center;
         padding: 5px;
         min-width: 130px;
     }

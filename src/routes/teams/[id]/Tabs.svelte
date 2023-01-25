@@ -8,42 +8,42 @@
 </script>
 
 <div class="tabs">
-    <ul>
         {#each tabItems as item}
             <button on:click={() => dispatch('tabChange', item)}>
                 <div class:active={item===activeItem}>{item}</div>
             </button>
         {/each}
-    </ul>
 </div>
 
 <style>
     .tabs {
         padding-top: 20px;
-    }
-    ul {
         display: flex;
-        justify-content: center;
         padding: 0;
         margin-bottom: 0;
-        list-style: none;
-        color: orange;
     }
     button {
         cursor: pointer;
-        background-color: var(--light);
+        border: none;        
+
+    }
+    button, button > div {
+        background-color: rgba(0,0,0,0);
     }
     button > div {
-        border: 1px solid transparent;
+        border: none;
         display: block;
         padding: 0.5rem 1rem;
         cursor: pointer;
-        color: black;
-        background-color: var(--light);
+        color: var(--light);
     }
     .active {
         color: var(--light);
-        background-color: var(--primary);
-        border-bottom: 1px solid var(--dark);
+        border-bottom: 2px solid var(--primary);
+    }
+    @media (max-width: 250px) {
+        .tabs {
+            flex-wrap: wrap;
+        }
     }
 </style>

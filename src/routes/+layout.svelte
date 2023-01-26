@@ -1,9 +1,11 @@
 <script>
-    import Navbar from "../components/Navbar.svelte";
+    import Navbar from "$lib/components/Navbar.svelte";
+    import Footer from "$lib/components/Footer.svelte";
 </script>
 
 <Navbar />
 <slot />
+<Footer/>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
@@ -32,6 +34,8 @@
         max-width: 100%;
         overflow-x: hidden;
         height: 100%;
+        /* Image by master1305 on Freepik */
+        /* <a href="https://www.freepik.com/free-photo/american-football-player-posing-with-ball-black-wall_9927347.htm#query=nfl%20player&position=10&from_view=keyword">Image by master1305</a> on Freepik */
         background-image: url("../assets/player.jpg");
         background-repeat: no-repeat, no-repeat;
         background-position: center; 

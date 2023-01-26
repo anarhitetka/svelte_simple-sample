@@ -1,7 +1,3 @@
-<script>
-	import NflLogoSvg from '../assets/NFLLogoSVG.svelte';
-</script>
-
 <div>
     <h1>GAME TIME</h1>
 </div>
@@ -11,13 +7,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 80px - 30px);
 
     }
     h1 {
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.5);
+        background-color: var(--background);
         text-align: center;
         display: flex;
         justify-content: center;

@@ -1,5 +1,5 @@
 <script>
-	import NflLogoSvg from '../assets/NFLLogoSVG.svelte';
+	import NflLogoSvg from '../../assets/NFLLogoSVG.svelte';
 
 	let isMenuOpen = false;
 

@@ -4,9 +4,13 @@
 </script>
 
 {#if $loading}
+<div class="team-container">
 	<h3>loading teams...</h3>
+</div>
 {:else if $error}
-	error: {$error}
+<div class="team-container">
+	<p>error: {$error}</p>
+</div>
 {:else}
 <div class="team-container">
 	{#each $teamsData as team}
@@ -33,6 +37,9 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
+		background-color: rgba(0,0,0,0.3);
+	    height: calc(100vh - 80px - 30px);
+		overflow-y: scroll;	
 	}
 	.team-link {
 		margin: 15px;

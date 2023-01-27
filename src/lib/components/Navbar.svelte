@@ -57,6 +57,7 @@
 		align-items: center;
 		position: relative;
 		height: 80px;
+		border-bottom: 1px solid var(--medium);
 	}
 
 	.logo {

@@ -8,9 +8,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: var(--dark);
+        background-color: var(--background);
         font-size: 0.6rem;
         height: 30px;
+        border-top: 1px solid var(--medium);
     }
     .anarhitetka {
         padding-left: 10px;

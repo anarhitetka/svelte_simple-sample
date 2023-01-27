@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	console.log(data)
+
 	const {teamsData: {team}, gamesData} = data;
 
 	import Tabs from "./TeamPageTabs/Tabs.svelte";
@@ -53,6 +53,17 @@
 		background-color: rgba(0,0,0,0.3);
 	    height: calc(100vh - 80px - 30px);
 		overflow-y: scroll;
+		scrollbar-width: thin;
+	}
+	::-webkit-scrollbar {
+		width: 9px;
+	}
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: var(--medium);
+		border: transparent;
 	}
 	.team-header {
 		display: flex;

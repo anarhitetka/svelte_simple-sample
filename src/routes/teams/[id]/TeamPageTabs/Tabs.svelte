@@ -41,9 +41,9 @@
         color: var(--light);
         border-bottom: 2px solid var(--primary);
     }
-    @media (max-width: 250px) {
+    @media (max-width: 350px) {
         .tabs {
-            flex-wrap: wrap;
+            flex-direction: column;
         }
     }
 </style>

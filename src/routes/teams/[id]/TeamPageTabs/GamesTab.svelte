@@ -13,23 +13,58 @@
 <div class="all-games-items-container">
     {#each items as game}
     <div class="game-container">
-        <span>{game.shortName}</span>
+        <span class="shortname">{game.shortName}</span>
         <span>{formatDate(game.date)}</span>
     </div>
     {/each}
 </div>
 
 <style>
+    .all-games-items-container {
+        margin: 20px 20px 0 20px;
+        display: flex;
+        flex-direction: column;
+    }
     .game-container {
         width: 50%;
         background-color: var(--light);
-        margin: 5px;
-        padding: 5px;
+        padding: 5px 10px;
+        border-bottom: 1px solid var(--medium);
         display: flex;
         justify-content: space-between;
     }
     span {
         color: var(--dark);
         font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
+    .shortname {
+        width: 100px;
+    }
+    @media (max-width: 950px) {
+        .all-games-items-container {
+            align-items: center;
+        }
+        .game-container {
+            width: 80vw;
+        }
+    }
+    @media (max-width: 320px) {
+        .all-games-items-container {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .game-container {
+            width: 100%;
+        }
+        span {
+            font-size: 0.8rem;
+            width: 100px;
+        }
+        .shortname {
+            width: 30px;
+            margin-right: 15px;
+        }
     }
 </style>

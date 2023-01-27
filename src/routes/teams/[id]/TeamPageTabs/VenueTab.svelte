@@ -24,12 +24,6 @@
 </script>
 
 <div class="venue-container">
-    <div class="venue-header">
-        <h3>{item.fullName}</h3>
-        <hr/>
-        <p>{item.address.city}, {item.address.state}</p>
-        <p>Capacity: {item.capacity}</p>
-    </div>
     <div class="images-venue">
         <!-- carousel with package 'svelte-carousel': -->
         <!-- <Carousel
@@ -49,6 +43,11 @@
         {/each}
         <button class="btn"  on:click={() => nextImage()}>&gt;</button>
     </div>
+    <div class="venue-header">
+        <h3>{item.fullName}</h3>
+        <hr/>
+        <p>{item.address.city}, {item.address.state}, Capacity: {item.capacity}</p>
+    </div>
 </div>
 
 <style>
@@ -61,10 +60,9 @@
         align-items: center;
     }
     h3, p {
-        color: var(--dark);
+        color: var(--light);
     }
     .venue-header {
-        background-color: var(--light);
         padding: 10px;
     }
     img {
@@ -79,7 +77,7 @@
     }
     .btn {
         color: var(--light);
-        font-size: 2rem;
+        font-size: 3rem;
         cursor: pointer;
         background-color: transparent;
         border: none;
@@ -88,14 +86,17 @@
     .btn:hover {
         color: var(--primary);
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1000px) {
         img {
-            height: 480px;
+            height: 400px;
         }
     }
     @media (max-width: 800px) {
         .venue-container {
-            margin: 0;
+            margin: 20px 0 0 0;
+            padding: 0;
+       }
+       .images-venue {
             padding: 0;
        }
     }
@@ -104,6 +105,9 @@
             margin: 0;
             padding: 0;
             font-size: 0.8rem;
+       }
+       .btn {
+        font-size: 1.5rem;
        }
     }
 </style>

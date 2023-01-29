@@ -12,10 +12,17 @@
 
 <div class="all-games-items-container">
     {#each items as game}
-    <div class="game-container">
-        <span class="shortname">{game.shortName}</span>
-        <span>{formatDate(game.date)}</span>
-    </div>
+        <!-- WIP  -->
+        <div>
+            <a target="_self" href={`/teams/${game.competitions[0].competitors[0].homeAway === "away" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[0]}</a>
+            @
+            <a data-sveltekit-reload href={`/teams/${game.competitions[0].competitors[0].homeAway === "home" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[1]}</a>
+        </div>
+        <!-- WIP -->
+        <div class="game-container">
+            <span class="shortname">{game.shortName}</span>
+            <span>{formatDate(game.date)}</span>
+        </div>
     {/each}
 </div>
 

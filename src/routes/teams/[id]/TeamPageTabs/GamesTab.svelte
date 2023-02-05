@@ -12,15 +12,13 @@
 
 <div class="all-games-items-container">
     {#each items as game}
-        <!-- WIP  -->
-        <div>
-            <a target="_self" href={`/teams/${game.competitions[0].competitors[0].homeAway === "away" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[0]}</a>
-            @
-            <a data-sveltekit-reload href={`/teams/${game.competitions[0].competitors[0].homeAway === "home" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[1]}</a>
-        </div>
-        <!-- WIP -->
         <div class="game-container">
-            <span class="shortname">{game.shortName}</span>
+            <!-- <span class="shortname">{game.shortName}</span> -->
+            <div class="game-shortname">
+                <a target="_self" class="team-link" href={`/teams/${game.competitions[0].competitors[0].homeAway === "away" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[0]}</a>
+                <span>@</span>
+                <a data-sveltekit-reload class="team-link"  href={`/teams/${game.competitions[0].competitors[0].homeAway === "home" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[1]}</a>
+            </div>
             <span>{formatDate(game.date)}</span>
         </div>
     {/each}
@@ -40,14 +38,23 @@
         display: flex;
         justify-content: space-between;
     }
+    .game-shortname {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100px;
+    }
+    .game-shortname > span {
+        padding: 0 5px;
+    }
+    .team-link {
+        color: var(--dark);
+    }
     span {
         color: var(--dark);
         font-size: 0.9rem;
         display: flex;
         align-items: center;
-    }
-    .shortname {
-        width: 100px;
     }
     @media (max-width: 950px) {
         .all-games-items-container {
@@ -69,9 +76,11 @@
             font-size: 0.8rem;
             width: 100px;
         }
-        .shortname {
-            width: 30px;
+        .game-shortname {
+            width: 50px;
             margin-right: 15px;
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 </style>

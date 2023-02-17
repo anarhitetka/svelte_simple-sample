@@ -12,12 +12,15 @@
 
 <div class="all-games-items-container">
     {#each items as game}
+        {@const awayTeamId = game.competitions[0].competitors[0].homeAway === "away" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}
+        {@const homeTeamId = game.competitions[0].competitors[0].homeAway === "home" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}
+        {@const awayTeamShortName = game.shortName.split(" @ ")[0]}
+        {@const homeTeamShortName = game.shortName.split(" @ ")[1]}
         <div class="game-container">
-            <!-- <span class="shortname">{game.shortName}</span> -->
             <div class="game-shortname">
-                <a target="_self" class="team-link" href={`/teams/${game.competitions[0].competitors[0].homeAway === "away" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[0]}</a>
+                <a target="_self" class="team-link" href={`/teams/${awayTeamId}`}>{awayTeamShortName}</a>
                 <span>@</span>
-                <a data-sveltekit-reload class="team-link"  href={`/teams/${game.competitions[0].competitors[0].homeAway === "home" ? game.competitions[0].competitors[0].id : game.competitions[0].competitors[1].id}`}>{game.shortName.split(" @ ")[1]}</a>
+                <a data-sveltekit-reload class="team-link"  href={`/teams/${homeTeamId}`}>{homeTeamShortName}</a>
             </div>
             <span>{formatDate(game.date)}</span>
         </div>
